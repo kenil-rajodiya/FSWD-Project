@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist | CineGuide</title>
+    <link href="../HomePage/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../customStyle.css">
+    <link rel="stylesheet" href="../HomePage/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Poppins&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-[#020202] text-white">
+    <!-- Header -->
+    <header class="w-full mr-0 ml-0 p-0">
+        <nav class="h-12 text-[#EAEAEA] flex justify-between items-center relative">
+            <div class="logo flex-shrink-0 ml-3">
+                <img class="h-12 w-auto" src="../logo.jpg" alt="CineGuide">
+            </div>
+
+
+            <!-- Mobile Menu (Hidden Initially) -->
+
+            <div class="sm:hidden flex items-center mr-4">
+                <button id="menu-button" type="button" class="text-2xl hover:text-yellow-500 transition duration-300">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="sm:hidden fixed top-0 right-0 w-full bg-black/70 text-[#EAEAEA] p-6 space-y-4 
+                            transform translate-x-full transition-transform duration-300">
+                <ul class="text-white text-lg space-y-3">
+                    <li class="hover:text-yellow-500 transition duration-300"><a href="../HomePage/index.html">Home</a>
+                    </li>
+                    <li class="hover:text-yellow-500 transition duration-300"><a href="../Movies/movies.html">Movies</a>
+                    </li>
+                    <li class="hover:text-yellow-500 transition duration-300"><a href="../TVShows/tvshows.html">TV
+                            Shows</a></li>
+                    <li class="hover:text-yellow-500 transition duration-300"><a href="../Feedback/contact.html">Contact
+                            Us</a></li>
+                </ul>
+                <button id="close-button" class="absolute top-4 right-4 text-white text-2xl">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+            </div>
+
+
+
+
+            <div class="content flex-1 flex justify-center items-center">
+                <ul class="hidden space-x-6 text-lg sm:flex">
+                    <li class="hover:text-white transition duration-300 text-yellow-500"><a
+                            href="../HomePage/index.html">Home</a></li>
+                    <li class="hover:text-yellow-500 transition duration-300"><a href="../Movies/movies.html">Movies</a>
+                    </li>
+                    <li class="hover:text-yellow-500 transition duration-300"><a href="../TVShows/tvshows.html">TV
+                            Shows</a>
+                    </li>
+                    <li class="hover:text-yellow-500 transition duration-300"><a href="../Feedback/contact.html">Contact
+                            Us</a></li>
+                </ul>
+            </div>
+            <div class="btns flex space-x-4 justify-evenly text-sm text-bold">
+                <!-- Register and Sign In Buttons -->
+                <a href="../Register_and_Sign_up/register.html" id="registerBtn">
+                    <button type="button" class="bg-transparent border border-white px-2 py-2 sm:px-4 rounded md:text-sm md:px-2 md:py-1 
+                        hover:text-yellow-500 transition duration-300 hover:border-yellow-300">Register</button>
+                </a>
+                <a href="../Register_and_Sign_up/signin.html" id="signinBtn">
+                    <button type="button" class="bg-transparent border border-white px-2 py-2 sm:px-4 rounded md:text-sm md:px-2 md:py-1 
+                        hover:text-yellow-500 transition duration-300 hover:border-yellow-300">Sign In</button>
+                </a>
+
+                <!-- User Profile & Logout (Hidden Initially) -->
+                <div id="userProfile" class="hidden items-center space-x-4">
+                    <a href="../Profile/watchlist.html" class="text-yellow-500 hover:text-white">
+                        <i class="fa-solid fa-bookmark text-2xl"></i>
+                    </a>
+                    <button id="logoutBtn"
+                        class="bg-red-500 px-4 py-2 text-white rounded hover:bg-red-600">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Watchlist Section -->
+    <div class="container mx-auto p-6">
+        <h1 class="text-white text-3xl font-bold text-center">My Watchlist</h1>
+        <div id="watchlist-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-6">
+            <!-- Movies & TV Shows will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class=" text-gray-200 py-6 mt-5">
+        <hr class="border-t border-gray-400 w-[100%]">
+        <div class="max-w-7xl mx-auto px-4 text-center mt-5">
+            <h2 class="text-xl font-bold text-gray-300">CineGuide</h2>
+            <p class="mt-2 text-sm">Your ultimate destination for trending movies & TV shows</p>
+
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="hover:text-yellow-400">Privacy Policy</a>
+                <span>|</span>
+                <a href="#" class="hover:text-yellow-400">Terms of Service</a>
+                <span>|</span>
+                <a href="#" class="hover:text-yellow-400">Contact Us</a>
+            </div>
+
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-yellow-400">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-yellow-400">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-yellow-400">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <p class="mt-4 text-xs">© 2025 CineGuide. All rights reserved.</p>
+            <p class="text-xs">Made with ❤️ by <span class="text-yellow-400">Kenil Rajodiya</span> & <span
+                    class="text-yellow-400">Priyanshu Kamani</span></p>
+        </div>
+    </footer>
+
+    <script src="watchlist.js"></script>
+</body>
+
+</html>

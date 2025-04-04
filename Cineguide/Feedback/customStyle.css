@@ -1,0 +1,19 @@
+body,
+html {
+  overflow-x: hidden; /* Prevents unwanted horizontal scroll on the entire page */
+
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.example {
+  -ms-overflow-style: none; /* Firefox */
+}

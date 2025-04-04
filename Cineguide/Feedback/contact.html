@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CineGuide</title>
+    <link href="./style.css" rel="stylesheet">
+    <link rel="stylesheet" href="customStyle.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Poppins&display=swap"
+        rel="stylesheet">
+    <!-- Fonts End -->
+</head>
+
+<body class="bg-black text-white">
+    <div class="min-h-screen flex flex-col items-center justify-center px-2 py-3">
+        <div class="w-full max-w-2xl border-2 rounded-2xl border-[#e6aa55] p-6 shadow-lg">
+            <h1 class="text-4xl font-bold mb-6 text-[#e6aa55] text-center">Contact Us</h1>
+            <p class="text-lg mb-8 text-gray-400 text-center">Have any questions or feedback? Feel free to reach out to
+                us.</p>
+
+            <form class="w-full" id="form">
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-bold mb-2" for="name">Name</label>
+                    <input class="w-full p-3 rounded-lg text-black border bg-white focus:ring-2 focus:ring-gray-500"
+                        type="text" id="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-bold mb-2" for="email">Email</label>
+                    <input class="w-full p-3 rounded-lg text-black border bg-white focus:ring-2 focus:ring-gray-500"
+                        type="email" id="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-bold mb-2" for="message">Message</label>
+                    <textarea class="w-full p-3 rounded-lg text-black border bg-white focus:ring-2 focus:ring-gray-500"
+                        id="message" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg transition">Send
+                    Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    document.querySelector("form").addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent form reload
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // const response = await fetch("http://localhost:5000/Feedback/contact", {
+        const response = await fetch("http://localhost:5000/feedback", {  // ✅ Corrected API URL
+
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, message }),
+        });
+
+        const data = await response.json();
+        alert(data.message); // Show response message
+
+        if (response.ok) {
+            // Clear form fields after successful submission
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+        }
+    });
+</script>
+
+
+</html>
